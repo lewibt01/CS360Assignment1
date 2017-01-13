@@ -70,6 +70,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/AccountInfo">Account</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
