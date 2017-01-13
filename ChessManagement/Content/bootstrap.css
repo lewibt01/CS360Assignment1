@@ -52,13 +52,17 @@ audio:not([controls]) {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  font-size: 14px;
+line-height: 24px;
+color: #333;
 }
 
 a:focus {
@@ -339,7 +343,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
+
 a:focus {
   color: #2a6496;
   text-decoration: underline;
@@ -4501,8 +4505,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+background-color: #003879;
+background-image: -moz-linear-gradient(top,#003f87);
 }
 
 .navbar-inverse .navbar-brand {
@@ -4520,7 +4524,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color:  #ffffff;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
