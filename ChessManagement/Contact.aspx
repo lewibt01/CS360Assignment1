@@ -6,7 +6,7 @@
 
     <address>
         <strong>Jeremy Becker: </strong>   <a href="mailto:beckjm04@students.ipfw.edu">beckjm04@students.ipfw.edu</a><br />
-        <strong>Marie Langford: </strong> <a href="mailto:langmc01@students.ipfw.edu">langmc01@students.ipfw.edum</a><br />
+        <strong>Marie Langford: </strong> <a href="mailto:langmc01@students.ipfw.edu">langmc01@students.ipfw.edu</a><br />
         <strong>Bradley Lewis: </strong> <a href="mailto:lewibt01@students.ipfw.edu">lewibt01@students.ipfw.edu</a><br />
         <strong>Garrett Martin: </strong> <a href="mailto:martgl01@students.ipfw.edu">martgl01@students.ipfw.edu</a><br />
         <strong>Grace Mavity: </strong> <a href="mailto:mavige01@students.ipfw.edu">mavige01@students.ipfw.edu</a><br />

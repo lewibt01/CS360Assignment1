@@ -864,6 +864,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: -1px;
+    left: -4px;
 }
 
 .col-xs-1,
