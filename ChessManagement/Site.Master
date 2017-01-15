@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - IPFW Chess Club</title>
+    <title><%: Page.Title %> - My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -56,7 +56,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="auto-style1" runat="server" href="~/">IPFW Chess Club</a>
+                    <a class="auto-style1" runat="server" href="~/">IPFW Chess</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -70,6 +70,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/AccountInfo">Account</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -78,7 +79,6 @@
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
-                                <li><a runat="server" href="~/Account/AccountInfo">Account</a></li>
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
@@ -90,7 +90,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - CS360 Group 4</p>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
     </form>
