@@ -9,7 +9,7 @@
     <button onclick="location.href='Admin/EnterScores'" type="button">Enter Weekly Tournament Results</button>
     <br />
     <br />
-    <button onclick="location.href='Admin/EnterDates'" type="button">Enter Tournament Dates</button>
+    <button onclick="location.href='Admin/EnterDates'" type="button">Schedule Tournament Dates</button>
     <br />
     <br />
     <button onclick="location.href='Admin/CreateDivisions'" type="button">Create Divisions</button>
