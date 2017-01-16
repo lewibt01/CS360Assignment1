@@ -336,6 +336,7 @@ input,
 select[multiple],
 textarea {
   background-image: none;
+    width: 296px;
 }
 
 a {

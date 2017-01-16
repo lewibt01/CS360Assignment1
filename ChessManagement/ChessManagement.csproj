@@ -199,6 +199,14 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AdminTools.aspx" />
+    <Content Include="Admin\AssignDivisions.aspx" />
+    <Content Include="Admin\AssignTournamentOfficials.aspx" />
+    <Content Include="Admin\CreateDivisions.aspx" />
+    <Content Include="Admin\EditMembers.aspx" />
+    <Content Include="Admin\EnterDates.aspx" />
+    <Content Include="Admin\EnterDivisions.aspx" />
+    <Content Include="Admin\EnterScores.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -374,6 +382,62 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools.aspx.cs">
+      <DependentUpon>AdminTools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminTools.aspx.designer.cs">
+      <DependentUpon>AdminTools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AssignDivisions.aspx.cs">
+      <DependentUpon>AssignDivisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AssignDivisions.aspx.designer.cs">
+      <DependentUpon>AssignDivisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AssignTournamentOfficials.aspx.cs">
+      <DependentUpon>AssignTournamentOfficials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AssignTournamentOfficials.aspx.designer.cs">
+      <DependentUpon>AssignTournamentOfficials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateDivisions.aspx.cs">
+      <DependentUpon>CreateDivisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateDivisions.aspx.designer.cs">
+      <DependentUpon>CreateDivisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditMembers.aspx.cs">
+      <DependentUpon>EditMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditMembers.aspx.designer.cs">
+      <DependentUpon>EditMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnterDates.aspx.cs">
+      <DependentUpon>EnterDates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EnterDates.aspx.designer.cs">
+      <DependentUpon>EnterDates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnterDivisions.aspx.cs">
+      <DependentUpon>EnterDivisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EnterDivisions.aspx.designer.cs">
+      <DependentUpon>EnterDivisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnterScores.aspx.cs">
+      <DependentUpon>EnterScores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EnterScores.aspx.designer.cs">
+      <DependentUpon>EnterScores.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
