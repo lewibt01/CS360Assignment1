@@ -18,6 +18,7 @@ namespace ChessManagement
 
         protected void Calendar1_SelectDay(object sender, EventArgs e)
         {
+            lblMatches.Text = "Matches for "; //Changed so text is only one day.
             txtSchedule.Visible = true;
             lblMatches.Visible = true;
             lblMatches.Text += Calendar1.SelectedDate.ToString("dd/MM/yyyy");

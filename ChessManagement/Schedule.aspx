@@ -19,7 +19,7 @@
         <TodayDayStyle BackColor="#58585a" ForeColor="White" />
     </asp:Calendar>
     <br />
-    <asp:Label ID="lblMatches" runat="server" Font-Size="Medium" ForeColor="Black" Text="Matches for " Visible="False"></asp:Label>
+    <asp:Label ID="lblMatches" runat="server" Font-Size="Medium" ForeColor="Black" Visible="False"></asp:Label>
     <br />
     <asp:TextBox ID="txtSchedule" runat="server" Height="50px" ReadOnly="True" TextMode="MultiLine" Visible="False" Width="419px"></asp:TextBox>
     <br />
