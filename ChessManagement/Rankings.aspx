@@ -1,15 +1,18 @@
-﻿<%@ Page Title="Rankings" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rankings.aspx.cs" Inherits="ChessManagement.Contact" %>
+﻿<%@ Page Title="Rankings" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rankings.aspx.cs" Inherits="ChessManagement.Rankings" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %></h2>
-    <h3>The rankings are determined by the total score of each member. They are updated for each division after the scores for the weekly matches have been recorded.</h3>
+    <h2><%: Title %>Rankings by Division</h2>
+    <p>The rankings are determined by the total score of each member. They are updated for each division after the scores for the weekly matches have been recorded.</p>
+    <p>Please select a division from the following dropdown box:</p>
 
     <address>
-        <strong>Jeremy Becker: </strong>   <a href="mailto:beckjm04@students.ipfw.edu">beckjm04@students.ipfw.edu</a><br />
-        <strong>Marie Langford: </strong> <a href="mailto:langmc01@students.ipfw.edu">langmc01@students.ipfw.edum</a><br />
-        <strong>Bradley Lewis: </strong> <a href="mailto:lewibt01@students.ipfw.edu">lewibt01@students.ipfw.edu</a><br />
-        <strong>Garrett Martin: </strong> <a href="mailto:martgl01@students.ipfw.edu">martgl01@students.ipfw.edu</a><br />
-        <strong>Grace Mavity: </strong> <a href="mailto:mavige01@students.ipfw.edu">mavige01@students.ipfw.edu</a><br />
-        <strong>Aaron New: </strong> <a href="mailto:newac01@students.ipfw.edu">newac01@students.ipfw.edu</a>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList>
+    </address>
+    <address>
+        <asp:Button ID="Button1" runat="server" Text="Submit" />
+    </address>
+    <address>
+        <asp:TextBox ID="TextBox1" ReadOnly="true" runat="server"></asp:TextBox>
     </address>
 </asp:Content>

@@ -47,6 +47,6 @@
     <p>
         <asp:Button ID="Button3" runat="server" Text="Remove Member from Chess Club" />
     </p>
-    <p>
+<p>
         &nbsp;</p>
 </asp:Content>
