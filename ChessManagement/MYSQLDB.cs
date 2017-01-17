@@ -12,7 +12,7 @@ namespace ChessManagement
         private static String conString = "server=172.76.245.119;Port=3306;database=CHESS;uid=webAccess;pwd=qwerty;";
         private static MySqlConnection conn = new MySqlConnection(conString);
 
-
+        //test if the database is connected
         public static bool isConnected()
         {
             try
@@ -67,7 +67,60 @@ namespace ChessManagement
             return tmpList;
         }
 
-        
+        private static void updateDB()
+        {
+
+        }
+
+        private static List<String> statement(String commandString,String username,String password, bool query=false)
+        {
+            List<String> tmpList = new List<String>();
+
+            MySqlCommand cmd = new MySqlCommand(commandString, conn);
+            MySqlDataReader reader;
+            if (!query)
+            {
+                try
+                {
+                    //open the connection to the DB
+                    cmd.Connection.Open();
+
+                    //execute the SQL command, saving the relevant data
+                    reader = cmd.ExecuteReader();
+                    conn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+                    //open sesame
+                    cmd.Connection.Open();
+
+                    //attach the reader to the command output
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader.GetString(0));
+                            
+                        }
+                    }
+
+                }catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            return tmpList;
+        }
 
     }
 }
