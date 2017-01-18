@@ -16,15 +16,16 @@
         Edit Member Information:<br />
     </h3>
     <p>
-        Name:
+        First Name:
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     </p>
+
     <p>
-        Phone Number:
+        Last Name:
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     </p>
     <p>
-        Email Address:
+        Phone Number:
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
     </p>
     <p>
@@ -34,6 +35,9 @@
     <p>
         Division:
         <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:ListItem Value="1">1</asp:ListItem>
+            <asp:ListItem Value="2">2</asp:ListItem>
+            <asp:ListItem Value="3">3</asp:ListItem>
         </asp:DropDownList>
     </p>
     <p>
@@ -45,7 +49,7 @@
     <p>
         Removing a member cannot be undone.</p>
     <p>
-        <asp:Button ID="Button3" runat="server" Text="Remove Member from Chess Club" />
+        <asp:Button ID="Button3" runat="server" Text="Remove Member from Chess Club" OnClick="removeMember"/>
     </p>
 <p>
         &nbsp;</p>

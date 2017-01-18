@@ -35,10 +35,47 @@ namespace ChessManagement
             return result;
         }
 
+        //Updates the first name of a certain username.
+        public static void changeFirstName(String fname, String username)
+        {
+            DataTable result = statement("UPDATE USERS SET fname=" + fname + "WHERE username=" + username);
+        }
+
+        //Updates the last name of a certain username
+        public static void changeLastName(String lname, String username)
+        {
+            DataTable result = statement("UPDATE USERS SET lname=" + lname + "WHERE username=" + username);
+        }
+
+        //Updates the phone number of a certain username
+        public static void changePhoneNumber(String phoneNumber, String username)
+        {
+            DataTable result = statement("UPDATE USERS SET phoneNumber=" + phoneNumber + "WHERE username=" + username);
+        }
+
+        //Updates the division of a certain username
+        public static void changeDivision(int division, String username)
+        {
+            DataTable result = statement("UPDATE USERS SET division=" + division + "WHERE username=" + username);
+        }
+
+        //Updates the password of a certain username
+        public static void changePassword(String password, String username)
+        {
+            DataTable result = statement("UPDATE USERS SET password=" + password + "WHERE username=" + username);
+        }
+
+        //Adds a user to the DB.
         public static void AddUser(int userID,String fname, String lname, int accessLevel,String username,String password,int division,String phoneNumber)
         {
             DataTable result = statement("INSERT INTO USERS(id,fname,lname,accountType,username,password,division,phoneNumber) VALUES(" + userID + ",'" 
                 + fname + "','" + lname + "','" + accessLevel + "','" + username + "','" + password + "'," + division + ",'" + phoneNumber + ")");
+        }
+
+        // Removes a user from the DB.
+        public static void removeUser(String username)
+        {
+            DataTable result = statement("DELETE FROM USERS WHERE username=" + username);
         }
 
         //returns all the data in the DB under a single user entry.
