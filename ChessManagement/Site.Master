@@ -95,7 +95,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - CS360 Group 4</p>
+                <p>&copy; <%: DateTime.Now.Year %> - CS360 Group 4. Logo image from pngimg.com</p>
             </footer>
         </div>
     </form>

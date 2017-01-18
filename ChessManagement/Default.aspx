@@ -9,6 +9,8 @@
         <img src="Logo.jpg" alt="Sample Photo" />
         <p class="lead">&nbsp;</p>
         <p class="lead">This project was designed using ASP.net and IIS.</p>
+
+        Logo image from http://pngimg.com/.
     </div>
 
     
