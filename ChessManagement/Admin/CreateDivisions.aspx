@@ -13,6 +13,6 @@
         </asp:CheckBoxList>
     </p>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="Submit" />
+        <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="assignDivision"/>
     </p>
 </asp:Content>

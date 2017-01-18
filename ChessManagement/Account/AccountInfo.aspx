@@ -7,6 +7,9 @@
     <p class="h4">Username:
         <asp:LoginName ID="LoginName1" runat="server" />
     </p>
+    <p class="h4">E-mail: 
+        <asp:Label ID="labelEmail" runat="server"></asp:Label>
+    </p>
     <p class="h4">Division:
         <asp:Label ID="labelDivision" runat="server" Text="Unknown"></asp:Label>
     </p>
