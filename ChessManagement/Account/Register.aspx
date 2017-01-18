@@ -19,6 +19,19 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="PhoneNumber" CssClass="col-md-2 control-label">Phone Number</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="PhoneNumber" CssClass="form-control" TextMode="Phone" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="PhoneNumber"
+                    Display="Dynamic" CssClass="text-danger" ErrorMessage="The phone number field is required." />
+                <asp:RegularExpressionValidator runat="server" ErrorMessage="Enter valid phone number"
+                    Display="Dynamic" CssClass="text-danger" ControlToValidate="PhoneNumber" 
+                    ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" >
+            </asp:RegularExpressionValidator>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />

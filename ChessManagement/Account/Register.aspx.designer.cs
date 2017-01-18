@@ -31,6 +31,15 @@ namespace ChessManagement.Account {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
+        /// PhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
+        
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
