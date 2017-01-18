@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using MySql.Data.MySqlClient;
-
-
 
 namespace ChessManagement
 {
@@ -24,66 +23,82 @@ namespace ChessManagement
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Connection Error");
+                Console.WriteLine(ex.Message);
             }
             return false;
         }
 
         //returns a List<> of every user in the database. 
-        public static List<String> getUsers()
+        public static DataTable getUsers()
         {
-            List<String> tmpList = new List<String>();
+            DataTable result = statement("SELECT * FROM USERS ORDER BY id ASC");
+            return result;
+        }
 
-            return tmpList;
+        public static void AddUser(int userID,String fname, String lname, int accessLevel,String username,String password,int division,String phoneNumber)
+        {
+            DataTable result = statement("INSERT INTO USERS(id,fname,lname,accountType,username,password,division,phoneNumber) VALUES(" + userID + ",'" 
+                + fname + "','" + lname + "','" + accessLevel + "','" + username + "','" + password + "'," + division + ",'" + phoneNumber + ")");
         }
 
         //returns all the data in the DB under a single user entry.
-        public static List<String> getUserData()
+        public static DataTable getUserData(String username)
         {
-            List<String> tmpList = new List<String>();
-
-            return tmpList;
+            DataTable result = statement("SELECT * FROM USER WHERE username="+username);
+            return result;
         }
 
-        /// <summary>
-        /// Get a user's match history, with each line containing the comma delmimited values of 1 match.
-        /// Data is displayed from that user's point of view, this determines whether or not the user won
-        /// or lost a particular match. 
-        /// </summary>
-        /// <param name="username"> the username of the user who's match history is desired </param> 
-        /// <returns> The designated user's match history as a list of strings </returns> 
-        public static List<String> getUserMatchHistory(String username)
-        {
-            List<String> tmpList = new List<String>();
 
-            return tmpList;
+        //grab all the users in a given division
+        public static DataTable getDivisions(int division)
+        {
+            DataTable result = statement("SELECT idUSER,fname,lname,username FROM USERS WHERE division="+division);
+            return result;
+        }
+ 
+        //grab all the matches from the MATCH table
+        public static DataTable getMatches()
+        {
+            DataTable result = statement("SELECT * FROM MATCH ORDER BY id ASC");
+            return result;
+        }
+
+        //grab all the data from the command history table
+        public static DataTable getHistory()
+        {
+            DataTable result = statement("SELECT * FROM HISTORY ORDER BY date ASC");
+            return result;
+        }
+
+        //grab the specified user's match history from their point of view. 
+        public static DataTable getUserMatchHistory(int userID)
+        {
+           //milage may vary with this method
+            DataTable result = statement("SELECT idTournament,idUSER1,idUSER2,winCondition,date FROM MATCH WHERE idUSER1="+userID+
+                " OR idUSER2="+userID+" ORDER BY date ASC");
+            return result;
         }
 
         //return a list of all the tournaments in the DB
-        public static List<String> getTournaments()
+        public static DataTable getTournaments(String username,String password)
         {
-            List<String> tmpList = new List<String>();
-
-            return tmpList;
+            DataTable result = statement("SELECT * FROM TOURNAMENT");
+            return result;
         }
 
-        private static void updateDB()
+        //execute some given SQL command with the given credentials
+        public static DataTable statement(String commandString, bool query = true)
         {
-
-        }
-
-        private static List<String> statement(String commandString, String username, String password, bool query = false)
-        {
-            List<String> tmpList = new List<String>();
-
+            DataTable result = new DataTable();
             MySqlCommand cmd = new MySqlCommand(commandString, conn);
             MySqlDataReader reader;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             if (!query)
             {
                 try
                 {
                     //open the connection to the DB
-                    cmd.Connection.Open();
+                    conn.Open();
 
                     //execute the SQL command, saving the relevant data
                     reader = cmd.ExecuteReader();
@@ -93,6 +108,7 @@ namespace ChessManagement
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
+                    conn.Close();
                 }
             }
             else
@@ -100,31 +116,30 @@ namespace ChessManagement
                 try
                 {
                     //open sesame
-                    cmd.Connection.Open();
+                    conn.Open();
 
-                    //attach the reader to the command output
-                    reader = cmd.ExecuteReader();
+                    //fill a datatable with the resultant data
+                    adapter.Fill(result);
 
-                    //while there are rows in the table
-                    if (reader.HasRows)
+                    /*
+                    foreach (DataRow row in result.Rows)
                     {
-                        //read down each line
-                        while (reader.Read())
+                        foreach (var item in row.ItemArray)
                         {
-                            //print to console for debug, then store the result to return
-                            String tmpString = reader.GetString(0);
-                            Console.WriteLine(tmpString);
-                            tmpList.Add(tmpString);
+                            Console.WriteLine(item);
                         }
-                    }
+                    }*/
+
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
+                    conn.Close();
                 }
             }
 
-            return tmpList;
+            return result;
         }
 
     }
