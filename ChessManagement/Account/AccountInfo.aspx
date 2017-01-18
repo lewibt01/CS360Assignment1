@@ -3,7 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Account Information</h2>
     <p class="row">My Chess profile:</p>
-    <p><span class="h4">Name: </span></p>
+    <p><span class="h4">Name:
+        <asp:Label ID="labelName" runat="server" Text="User"></asp:Label>
+       </span></p>
     <p class="h4">Username:
         <asp:LoginName ID="LoginName1" runat="server" />
     </p>
@@ -21,7 +23,7 @@
     </p>
     <p class="h4">Match History:</p>
     <p class="h3">
-        <asp:Table ID="tableMatches" runat="server" HorizontalAlign="Left">
-        </asp:Table>
+        <asp:GridView ID="tableMatches" runat="server" HorizontalAlign="Left" AllowSorting="True" OnSelectedIndexChanged="tableMatches_SelectedIndexChanged" ToolTip="Match History">
+        </asp:GridView>
     </p>
 </asp:Content>

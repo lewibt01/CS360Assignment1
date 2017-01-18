@@ -13,6 +13,15 @@ namespace ChessManagement.Account {
     public partial class AccountInfo {
         
         /// <summary>
+        /// labelName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelName;
+        
+        /// <summary>
         /// LoginName1 control.
         /// </summary>
         /// <remarks>
@@ -64,6 +73,6 @@ namespace ChessManagement.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tableMatches;
+        protected global::System.Web.UI.WebControls.GridView tableMatches;
     }
 }
