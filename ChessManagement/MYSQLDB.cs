@@ -104,15 +104,19 @@ namespace ChessManagement
 
                     //attach the reader to the command output
                     reader = cmd.ExecuteReader();
+
+                    //while there are rows in the table
                     if (reader.HasRows)
                     {
+                        //read down each line
                         while (reader.Read())
                         {
-                            Console.WriteLine(reader.GetString(0));
-
+                            //print to console for debug, then store the result to return
+                            String tmpString = reader.GetString(0);
+                            Console.WriteLine(tmpString);
+                            tmpList.Add(tmpString);
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
