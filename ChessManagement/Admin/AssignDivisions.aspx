@@ -13,4 +13,8 @@
     <asp:DropDownList ID="DropDownList2" runat="server">
     </asp:DropDownList>
 </p>
+
+<p>
+    <asp:Button ID="submitButton" runat="server" OnClick="assignDivision" Text="Assign Member" visible=true/>
+</p>
 </asp:Content>
