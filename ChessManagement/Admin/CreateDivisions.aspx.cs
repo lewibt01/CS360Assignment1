@@ -11,8 +11,8 @@ namespace ChessManagement.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<String> userList = MYSQLDB.getUsers();     //Get the entire list of users.
-            CheckBoxList1.DataSource = userList;            //Populate the checkbox with all users.
+            //List<String> userList = MYSQLDB.getUsers();   //Get the entire list of users.
+            CheckBoxList1.DataSource = MYSQLDB.getUsers().Columns["username"];  //Populate the checkbox with all users.
             CheckBoxList1.DataBind();                       //Binds the data.   
         }
 

@@ -23,7 +23,7 @@
     </p>
     <p class="h4">Match History:</p>
     <p class="h3">
-        <asp:GridView ID="tableMatches" runat="server" HorizontalAlign="Left" AllowSorting="True" OnSelectedIndexChanged="tableMatches_SelectedIndexChanged" ToolTip="Match History">
+        <asp:GridView ID="gridMatches" runat="server" HorizontalAlign="Left" AllowSorting="True" ToolTip="Match History">
         </asp:GridView>
     </p>
 </asp:Content>

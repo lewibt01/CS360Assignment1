@@ -38,6 +38,15 @@ namespace ChessManagement.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        if (MYSQLDB.getUserData(Email.Text).Rows[0]["accountType"].ToString() =="3")
+                        {
+                            manager.AddToRoleAsync(User.Identity.Name, "admin");
+                        }
+                        if (MYSQLDB.getUserData(Email.Text).Rows[0]["accountType"].ToString() == "2")
+                        {
+                            manager.AddToRoleAsync(User.Identity.Name, "official");
+                        }
+
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
                     case SignInStatus.LockedOut:

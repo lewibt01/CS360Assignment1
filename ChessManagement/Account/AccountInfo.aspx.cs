@@ -12,30 +12,34 @@ namespace ChessManagement.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            labelName.Text = User.Identity.Name;
-            string UserData = MYSQLDB.getUserData().ToString();
-            labelDivision.Text = "First division"; // Set this to the data in the database for the divison string 
-                                                   // (String because the division name can be set to anything.) 
-            labelDivision.Text = UserData.Split(',')[3];
-            labelPoints.Text = 100.ToString();     // I didn't know that would work... but this needs to be set as well.
-            int ranking = 1;                       // Set this from database
-            int membersInDivision = 11;            // Set this from database too
+
+            if (!MYSQLDB.isConnected())
+            {
+                return;
+            }
+            DataTable UserData = MYSQLDB.getUserData(User.Identity.Name);
+            int userId = (int)UserData.Rows[0]["id"];
+            int division = (int)UserData.Rows[0]["division"];
+            labelName.Text = UserData.Rows[0]["fname"].ToString();
+
+            labelEmail.Text = UserData.Rows[0]["username"].ToString();
+            labelDivision.Text = UserData.Rows[0]["division"].ToString();
+
+            labelPoints.Text = 100.ToString();     // Default value  
+            int ranking = 1;                       // Set this from database somehow!
+
+            int membersInDivision = (int)MYSQLDB.statement("SELECT *, COUNT(*) FROM USERS WHERE division=" + division.ToString()).Rows[0][0];
             labelRanking.Text = String.Format("#{0} out of {1}", ranking.ToString(), membersInDivision.ToString());
 
-            tableMatches.GridLines = GridLines.Both;
-            DataTable dt = new DataTable();
-            List<string> userHistory = MYSQLDB.getUserMatchHistory(User.Identity.Name); //Get User match history
-            foreach (string item in userHistory)
-            {
-                dt.LoadDataRow(item.Split(','), true);  // Take each row, and put it into DataTable
-            }
-            tableMatches.DataSource = dt;
+            gridMatches.GridLines = GridLines.Both;
+            DataTable userHistory = MYSQLDB.getUserMatchHistory(userId); //Get User match history
+            gridMatches.DataSource = userHistory;
+
+            int winScore = (int)userHistory.Compute("Sum(winCondition)", "idWinner=" + userId);
+            int drawScore = (int)userHistory.Compute("Sum(winCondition)", "winCondition > 1 AND winCondition < 4 AND idWinner=" + userId) / 2;
+            labelPoints.Text = (winScore + drawScore).ToString();
 
         }
 
-        protected void tableMatches_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

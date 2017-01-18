@@ -69,6 +69,12 @@ namespace ChessManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.IsInRole("official") || HttpContext.Current.User.IsInRole("admin"))
+            {
+                Page.Master.FindControl("adminLink").Visible = true;
+                //adminLink.Visible = true; ??
+                
+            }
 
         }
 

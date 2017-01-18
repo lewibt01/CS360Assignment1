@@ -11,6 +11,9 @@
     Select the division to place the member in:</p>
 <p>
     <asp:DropDownList ID="DropDownList2" runat="server">
+        <asp:ListItem Value="1">Division 1</asp:ListItem>
+        <asp:ListItem Value="2">Division 2</asp:ListItem>
+        <asp:ListItem Value="3">Division 3</asp:ListItem>
     </asp:DropDownList>
 </p>
 

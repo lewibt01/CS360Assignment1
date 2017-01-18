@@ -11,9 +11,10 @@ namespace ChessManagement.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<String> userList = MYSQLDB.getUsers();     //Get the user list from the DB.
-            DropDownList1.DataSource = userList;            //Data source for DropDownList1 is the list of strings.
-            DropDownList1.DataBind();                       //Bind the data to the list.
+            //List<String> userList = MYSQLDB.getUsers();       //Get the user list from the DB.
+            DropDownList1.DataSource = MYSQLDB.getUsers().Columns["username"];  //Data source for DropDownList1.
+            DropDownList1.DataBind();                           //Bind the data to the list.
+            DropDownList2.DataTextFormatString = "Division {0:F0}";
         }
 
         /**
@@ -24,8 +25,15 @@ namespace ChessManagement.Admin
         {
             string selectedUser = DropDownList1.SelectedValue;      //Get the selected user.
             string selectedDivision = DropDownList2.SelectedValue;  //Get the selected division.
-
-
+            if (!MYSQLDB.isConnected())
+            {
+                //error
+            }
+            else
+            {
+                MYSQLDB.statement("UPDATE USERS SET division='" + selectedDivision + "' WHERE username='" + selectedUser + "'");
+            }
+            
 
         }
     }
